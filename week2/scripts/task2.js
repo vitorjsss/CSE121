@@ -16,7 +16,7 @@ document.querySelector("#year").innerHTML = currentYear;
 
 // Step 5: declare and instantiate a variable to hold the name of your picture
 let myPic = "A picture of me in São Paulo";
-let picDirectory = "images/me.jpg";
+let picDirectory = "images/mw.jpg";
 
 // Step 6: copy your image into the "images" folder
 
