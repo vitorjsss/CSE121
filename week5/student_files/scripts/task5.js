@@ -92,12 +92,12 @@ function output (temples) {
 async function getTemples() {
     const response = await fetch('https://byui-cse.github.io/cse121b-course/week05/temples.json');
     if (response.ok) {
-        temples =await response.json();
+        temples = await response.json();
         output(temples);
+
     }
 };
 
-getTemples();
 
 // Step 4: In the function, using the built-in fetch method, call this absolute URL: 'https://byui-cse.github.io/cse121b-course/week05/temples.json'. Create a variable to hold the response from your fetch. You should have the program wait on this line until it finishes.
 // Step 5: Convert your fetch response into a Javascript object ( hint: .json() ). Store this in the templeList variable you declared earlier (Step 1). Make sure the the execution of the code waits here as well until it finishes.
@@ -106,7 +106,10 @@ getTemples();
 // Step 7: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
 function reset() {
     const article = document.getElementById('temples');
-    article.remove();
+    while (article.firstChild) {
+      article.removeChild(article.firstChild);
+    };
+
 }
 
 // Step 8: Declare a function named sortBy that does the following:
