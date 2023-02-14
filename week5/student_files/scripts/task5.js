@@ -64,27 +64,28 @@ var temples = [];
 
 function output (temples) {
   temples.forEach(temple => {
-    const article = document.createElement('article');
+    let article = document.createElement('article');
 
-    const h3 = document.createElement('h3');
-    h3.innerHTML = temple.templeName;
+    let templeName = document.createElement('h3');
     
-    const h4_location = document.createElement('h4');
-    h4_location.innerHTML = temple.location;
+    let location = document.createElement('h4');
 
-    const h4_dedication = document.createElement('h4');
-    h4_dedication.innerHTML = temple.dedicated;
+    let dedication = document.createElement('h4');
     
-    const img = document.createElement('img');
+    let img = document.createElement('img');
+
+    templeName.innerHTML = temple.templeName;
+    location.innerHTML = temple.location;
+    dedication.innerHTML = temple.dedicated;
     img.setAttribute('src', temple.imageUrl);
     img.setAttribute('alt', temple.templeName);
     
-    article.appendChild(h3);
-    article.appendChild(h4_location);
-    article.appendChild(h4_dedication);
+    article.appendChild(templeName);
+    article.appendChild(location);
+    article.appendChild(dedication);
     article.appendChild(img);
     article.setAttribute('id', 'temples');
-    document.body.append(article);
+    document.querySelector('#temples').appendChild(article);
   });
 };
 
